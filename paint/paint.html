@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Paint</title>
+    <style>
+      /* Estilos CSS para a tela de desenho */
+      #canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <div id="color-picker">
+    <input type="color" id="color-input" value="#000000">
+   </div>
+    <script>
+      // Obtém o canvas do HTML
+      var canvas = document.getElementById("canvas");
+      // Obtém o contexto de desenho do canvas
+      var ctx = canvas.getContext("2d");
+      
+      // Variáveis para rastrear se o usuário está pressionando o mouse
+      var painting = false;
+      var started = false;
+      
+      // Eventos de mouse para iniciar e parar o desenho
+      canvas.addEventListener("mousedown", function(e) {
+        painting = true;
+        started = true;
+        ctx.beginPath();
+        ctx.moveTo(e.clientX, e.clientY);
+      });
+      canvas.addEventListener("mouseup", function() {
+        painting = false;
+      });
+      
+      // Evento de mouse para desenhar linhas enquanto o usuário pressiona o mouse
+      canvas.addEventListener("mousemove", function(e) {
+        if (painting) {
+          ctx.lineTo(e.clientX, e.clientY);
+          ctx.stroke();
+        }
+      });
+      
+      // Evento de mouse para desenhar linhas enquanto o usuário pressiona o mouse
+      canvas.addEventListener("touchstart", function(e) {
+        painting = true;
+        started = true;
+        ctx.beginPath();
+        ctx.moveTo(e.touches[0].clientX, e.touches[0].clientY);
+      });
+      canvas.addEventListener("touchmove", function(e) {
+        if (painting) {
+          ctx.lineTo(e.touches[0].clientX, e.touches[0].clientY);
+          ctx.stroke();
+        }
+      });
+      canvas.addEventListener("touchend", function() {
+        painting = false;
+      });
+      var colorInput = document.getElementById("color-input");
+      colorInput.addEventListener("input", function() {
+        ctx.strokeStyle = colorInput.value;
+      });
+
+    </script>
+  </body>
+</html>

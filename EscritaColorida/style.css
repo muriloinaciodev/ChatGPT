@@ -1,0 +1,16 @@
+textarea {
+  width: 500px;
+  height: 300px;
+  font-family: monospace;
+  font-size: 14px;
+  padding: 10px;
+  color: #333;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  resize: none;
+}
+
+.keyword {
+  color: blue;
+  font-weight: bold;
+}

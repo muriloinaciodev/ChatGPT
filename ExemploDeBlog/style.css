@@ -1,0 +1,90 @@
+/* Definição geral da fonte */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+}
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: #3498db;
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
+    flex: 1;
+}
+
+/* Estilos para o menu de navegação */
+nav {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}
+
+/* Estilos para os posts */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+main h2 {
+    width: 80%;
+    border-bottom:3px solid #3498db;
+    color: #3498db;
+}
+
+.post {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0px 0px 10px #aaa;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.post h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
